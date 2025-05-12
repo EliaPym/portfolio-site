@@ -3,7 +3,6 @@
     Source: https://codepen.io/jh3y/pen/ExrWxyE
 */
 
-
 * {
   box-sizing: border-box;
 }
@@ -12,7 +11,6 @@
   --size: 20px;
   --angle: 180deg;
 }
-
 
 .el {
   width: 100%;

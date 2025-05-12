@@ -9,7 +9,7 @@ export default function Navbar() {
         <div className="text-2xl font-mono">
           <Link href="/">E-P.dev</Link>
         </div>
-        <ul className="flex space-x-4">
+        <ul className="flex space-x-8 text-lg navbar">
           <li>
             <Link href="/about">About</Link>
           </li>

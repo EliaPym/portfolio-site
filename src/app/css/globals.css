@@ -4,6 +4,7 @@
   --background: #101720;
   --foreground: #FFFFFF;
   --primary: #FAF9F6;
+  --highlight-blue: #0000FF;
 }
 
 @theme inline {
@@ -20,6 +21,25 @@
   }
   p {
     color: var(--primary);
+  }
+  .highlight-blue p span {
+    color: var(--highlight-blue);
+  }
+  .navbar li a {
+    color: var(--foreground);
+    font-family: var(--font-ubuntu);
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .navbar li a:hover {
+    background-color: var(--foreground);
+    color: var(--background);
+  }
+  hr {
+    border: 1px solid var(--foreground);
+    margin: 20px 0;
   }
 }
 
