@@ -6,11 +6,10 @@ export default function Navbar() {
   return (
     <>
       <nav className="flex items-center justify-between p-4 text-white">
-        <div className="text-2xl font-bold">My Portfolio</div>
+        <div className="text-2xl font-mono">
+          <Link href="/">E-P.dev</Link>
+        </div>
         <ul className="flex space-x-4">
-          <li>
-            <Link href="/">Home</Link>
-          </li>
           <li>
             <Link href="/about">About</Link>
           </li>

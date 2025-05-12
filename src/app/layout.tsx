@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "@/app/css/globals.css";
 import Navbar from "./navbar";
+import { Ubuntu, Sono } from 'next/font/google';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const ubuntu = Ubuntu({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-ubuntu',
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const sono = Sono({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-sono',
 });
 
 export const metadata: Metadata = {
@@ -25,9 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${ubuntu.variable} ${sono.variable} antialiased`}>
         <Navbar />
         <main className="flex-grow">{children}</main>
       </body>

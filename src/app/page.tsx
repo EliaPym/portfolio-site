@@ -1,15 +1,15 @@
 "use client";
 
+import Background from "@/app/components/background";
+
 export default function Home() {
   return (
-    <main>
-      <h1 className="text-3xl font-bold underline">
-        Hello
-        <br />
-        I&apos;m Elia Pym
-      </h1>
-      <p className="text-lg">Aspiring Software and DevOps Engineer</p>
-      
-    </main>
+    <Background>
+        <div className="w-screen text-white py-20 px-5">
+          <h1 className="text-3xl font-bold">Hi, I&apos;m Elia</h1>
+          
+          <p className="text-5xl">Aspiring Software &<br/> DevOps Engineer</p>
+        </div>
+    </Background>
   );
 }
