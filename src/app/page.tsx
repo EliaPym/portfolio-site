@@ -20,14 +20,13 @@ export default function Home() {
         </h1>
         <hr className="my-6 border-t-2 w-[103%] self-center" />
         <p className="text-5xl">
-          <pre className="pb-2">
-            Aspiring{" "}
-            <span className="font-bold bg-gradient-to-r from-cyan-300 to-teal-400 inline-block text-transparent bg-clip-text">
-              Software
-            </span>{" "}
-            &
-          </pre>
-          <span className="font-bold bg-gradient-to-r from-red-400 to-rose-400 inline-block text-transparent bg-clip-text">
+          Aspiring{" "}
+          <span className="font-medium bg-gradient-to-r from-cyan-300 to-teal-400 inline-block text-transparent bg-clip-text">
+            Software
+          </span>{" "}
+          &
+          <br />
+          <span className="font-medium bg-gradient-to-r from-red-400 to-rose-400 inline-block text-transparent bg-clip-text">
             DevOps
           </span>{" "}
           Engineer
