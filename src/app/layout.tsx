@@ -12,7 +12,7 @@ const ubuntu = Ubuntu({
 });
 
 const sono = Sono({
-  weight: '400',
+  weight: 'variable',
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-sono',
