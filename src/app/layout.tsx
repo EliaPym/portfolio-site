@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "@/app/css/globals.css";
 import Navbar from "./navbar";
 import Footer from "./footer";
-import { Ubuntu, Sono } from 'next/font/google';
+import { Ubuntu, Sono, Roboto_Condensed, Roboto_Mono } from 'next/font/google';
 
 const ubuntu = Ubuntu({
   weight: ['400', '500', '700'],
@@ -18,6 +18,20 @@ const sono = Sono({
   variable: '--font-sono',
 });
 
+const robotoCondensed = Roboto_Condensed({
+  weight: 'variable',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-roboto-condensed',
+});
+
+const robotoMono = Roboto_Mono({
+  weight: 'variable',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-roboto-mono',
+});
+
 export const metadata: Metadata = {
   title: "Home - Portfolio",
   description: "Home page",
@@ -30,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${ubuntu.variable} ${sono.variable} antialiased min-h-screen flex flex-col`}>
+      <body className={`${ubuntu.variable} ${sono.variable} ${robotoCondensed.variable} ${robotoMono.variable} antialiased min-h-screen flex flex-col`}>
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
