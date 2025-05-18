@@ -1,17 +1,27 @@
 "use client";
 
-import Background from "@/app/components/background";
+import { FlickeringGrid } from "./components/background";
 import SocialIcon from "@/app/components/socialicon";
 import { LinkedIn, Github, Email } from "@/../public/icons/socialicons";
 import { Typewriter } from "react-simple-typewriter";
 import { SkillsMarquee } from "./components/skillsMarquee";
+import { AnimatedGradientText } from "./components/gradientText";
 
 export default function Home() {
   return (
-    <>
-      <Background>
+    <div className="relative flex flex-col">
+      <div className="relative">
+        <FlickeringGrid
+          className="absolute inset-0 z-[-1] [mask-image:radial-gradient(ellipse_at_center,white_0%,transparent_77%)]"
+          squareSize={5}
+          gridGap={6}
+          color="#60A5FA"
+          maxOpacity={0.5}
+          flickerChance={0.1}
+        />
+
         <div className="py-[10%] pl-[15%] w-fit flex flex-col">
-          <h1 className="text-3xl font-mono">
+          <h1 className="text-3xl font-roboto-mono">
             {"C:/> "}
             <Typewriter
               words={["Hi, I'm Elia"]}
@@ -25,14 +35,24 @@ export default function Home() {
           <hr className="border-t-2 w-[103%] self-center" />
           <p className="text-5xl">
             Aspiring{" "}
-            <span className="font-medium bg-gradient-to-r from-cyan-300 to-teal-400 inline-block text-transparent bg-clip-text">
+            <AnimatedGradientText
+              className="font-medium"
+              colorFrom="#53eafd"
+              colorTo="#5ee9b5"
+              speed={0.7}
+            >
               Software
-            </span>{" "}
+            </AnimatedGradientText>{" "}
             &
             <br />
-            <span className="font-medium bg-gradient-to-r from-red-400 to-rose-400 inline-block text-transparent bg-clip-text">
+            <AnimatedGradientText
+              className="font-medium"
+              colorFrom="#ff6467"
+              colorTo="#ff2056"
+              speed={0.7}
+            >
               DevOps
-            </span>{" "}
+            </AnimatedGradientText>{" "}
             Engineer
           </p>
           <div className="flex flex-row space-x-6 mt-6">
@@ -56,10 +76,11 @@ export default function Home() {
             />
           </div>
         </div>
-      </Background>
+      </div>
+
       <div className="w-full h-fit flex items-center justify-center">
         <SkillsMarquee />
       </div>
-    </>
+    </div>
   );
 }

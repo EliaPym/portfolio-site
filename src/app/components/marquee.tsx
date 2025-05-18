@@ -1,3 +1,8 @@
+/*
+    Credit: Magic UI - https://magicui.design/
+    Source: https://magicui.design/docs/components/marquee
+*/
+
 import { cn } from "@/lib/utils";
 import { ComponentPropsWithoutRef } from "react";
 
