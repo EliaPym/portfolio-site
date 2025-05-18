@@ -29,7 +29,7 @@ export default function Home() {
     },
     {
       icon: <SkillsIcons.AWSIcon />,
-      name: "AWS",
+      name: "Amazon Web Services",
       colour_bl: "#fce4ec",
       colour_tr: "#f0f4c3",
     },
@@ -47,7 +47,7 @@ export default function Home() {
     },
     {
       icon: <SkillsIcons.MicrosoftIcon />,
-      name: "Microsoft",
+      name: "Microsoft 365 Admin",
       colour_bl: "#fce4ec",
       colour_tr: "#f0f4c3",
     },

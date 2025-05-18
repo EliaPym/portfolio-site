@@ -96,15 +96,14 @@ export const InfiniteMovingCards = ({
             key={index}
             className="group flex flex-col items-center justify-center text-center"
           >
-            <div
-              className="w-42 h-20 rounded-lg flex items-center justify-center bg-gradient-to-b from-slate-700 to-slate-800"
-            >
+            <div className="w-42 h-20 rounded-lg flex items-center justify-center bg-gradient-to-b from-slate-700 to-slate-800">
               <div
                 className="w-16 h-16 rounded-lg flex items-center justify-center fill-white group-hover:blur-xs"
                 style={{ width: "4rem", height: "4rem" }}
               >
                 {item.icon}
               </div>
+              <div className="absolute text-transparent group-hover:text-primary text-xl w-42 wrap-break-word">{item.name}</div>
             </div>
           </li>
         ))}
