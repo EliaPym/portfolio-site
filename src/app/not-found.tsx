@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import "./css/404.css";
 import "./css/globals.css";
 
 import CountUp from "./components/counter";
@@ -15,7 +14,7 @@ export default function NotFound() {
     setMessage404(
       React.createElement(
         "h1",
-        { className: "example-style" },
+        { className: "fade-in" },
         "The page you are looking for does not exist"
       )
     );
@@ -23,7 +22,7 @@ export default function NotFound() {
 
   return (
     <div className="font-roboto">
-      {/* Credit: CuiCui - https://cuicui.day/other/patterns*/}
+      {/* Credit: CuiCui - https://cuicui.day/other/patterns */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:35px_34px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] -z-10" />
       <div className="p-[10%] flex flex-col items-center relative z-10">
         <div className="count-up-text font-light font-roboto-mono text-[10rem]">

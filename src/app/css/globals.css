@@ -27,6 +27,19 @@
   }
 }
 
+.fade-in {
+  animation: fade-in 4s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+
 @layer base {
   h1,
   h2,
