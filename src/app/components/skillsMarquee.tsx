@@ -88,7 +88,7 @@ const Card = ({
   colour_tr: string;
 }) => {
   return (
-    <li className="group flex flex-col items-center justify-center text-center">
+    <li className="group flex flex-col items-center justify-center text-center text-primary font-medium">
       <div className="w-42 h-20 rounded-lg flex items-center justify-center bg-gradient-to-b from-slate-700 to-slate-800 relative">
         <div
           className="w-16 h-16 rounded-lg flex items-center justify-center fill-white transition-all duration-200"
@@ -96,7 +96,7 @@ const Card = ({
         >
           {icon}
         </div>
-        <div className="absolute text-transparent opacity-0 text-2xl w-42 transition-all duration-600 text-shadow-md/70 text-shadow-black">
+        <div className="absolute text-transparent opacity-0 text-2xl w-[90%] transition-all duration-600 text-shadow-md/70 text-shadow-black">
           {name}
         </div>
         <div
