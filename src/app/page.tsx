@@ -12,7 +12,7 @@ export default function Home() {
     <div className="relative flex flex-col">
       <div className="relative">
         <FlickeringGrid
-          className="absolute inset-0 z-[-1] [mask-image:radial-gradient(ellipse_at_center,white_0%,transparent_77%)]"
+          className="absolute inset-0 z-[-1] [mask-image:radial-gradient(ellipse_at_center,white_0%,transparent_100%)]"
           squareSize={5}
           gridGap={6}
           color="#60A5FA"

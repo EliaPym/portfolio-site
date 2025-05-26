@@ -3,9 +3,9 @@
 import React, { useState } from "react";
 import { Button, TextField } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
-import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/material.css";
+import { MuiPhone } from "../components/phoneInput";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { DotPattern } from "../components/dotPattern";
 
 export default function Contact() {
   const [phone, setPhone] = useState("");
@@ -18,6 +18,17 @@ export default function Contact() {
 
   return (
     <>
+      <DotPattern
+        width={16}
+        height={16}
+        x={0}
+        y={0}
+        cx={1}
+        cy={1}
+        cr={1}
+        className="absolute inset-0 z-[-1] opacity-50 [mask-image:radial-gradient(ellipse_at_center,white_0%,transparent_77%)]"
+        glow={true}
+      />
       <div className="flex flex-col items-center justify-center w-screen h-full">
         <h1>Contact</h1>
         {/*
@@ -38,6 +49,7 @@ export default function Contact() {
                 label="First Name"
                 placeholder="John"
                 variant="outlined"
+                className="bg-background/80"
               />
               <TextField
                 id="last_name"
@@ -45,6 +57,7 @@ export default function Contact() {
                 label="Last Name"
                 placeholder="Doe"
                 variant="outlined"
+                className="bg-background/80"
               />
             </div>
             <TextField
@@ -53,22 +66,21 @@ export default function Contact() {
               label="Email"
               placeholder="johndoe@example.com"
               variant="outlined"
-              className="w-full"
+              className="bg-background/80 w-full"
             />
             <div className="flex flex-row gap-4 w-full">
-              <PhoneInput
+              <MuiPhone
                 value={phone}
                 onChange={(phone) => setPhone(phone)}
-                country="gb"
-                preferredCountries={["gb"]}
-                enableSearch={true}
+                className="bg-background/80"
               />
               <TextField
                 id="company"
                 name="company"
-                label="Company (optional)"
+                label="Company"
                 placeholder="Example Inc."
                 variant="outlined"
+                className="bg-background/80"
               />
             </div>
             <TextField
@@ -79,7 +91,7 @@ export default function Contact() {
               variant="outlined"
               multiline
               rows={4}
-              className="w-full"
+              className="bg-background/80 w-full"
             />
             <Button variant="contained" type="submit" endIcon={<SendIcon />}>
               Submit
