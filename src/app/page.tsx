@@ -12,14 +12,13 @@ export default function Home() {
     <div className="relative flex flex-col">
       <div className="relative">
         <FlickeringGrid
-          className="absolute inset-0 z-[-1] [mask-image:radial-gradient(ellipse_at_center,white_0%,transparent_100%)]"
+          className="absolute inset-0 z-[-1] [mask-image:radial-gradient(ellipse_at_center,white_0%,transparent_77%)]"
           squareSize={5}
           gridGap={6}
           color="#60A5FA"
           maxOpacity={0.5}
           flickerChance={0.1}
         />
-
         <div className="py-[10%] pl-[15%] w-fit flex flex-col">
           <h1 className="text-3xl font-roboto-mono">
             {"C:/> "}
@@ -77,8 +76,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      <div className="w-full h-fit flex items-center justify-center">
+      <div className="w-full h-fit flex items-center justify-center m-[-17px]">
         <SkillsMarquee />
       </div>
     </div>

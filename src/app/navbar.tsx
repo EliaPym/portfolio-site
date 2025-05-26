@@ -5,11 +5,11 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <>
-      <nav className="flex items-center justify-between p-4 text-white">
-        <div className="text-2xl font-roboto-mono">
+      <nav className="flex items-center justify-between p-4 text-primary">
+        <div className="text-2xl font-roboto-mono font-light epdev">
           <Link href="/">E-P.dev</Link>
         </div>
-        <ul className="flex space-x-8 text-lg navbar">
+        <ul className="flex space-x-8 text-xl navbar pr-8">
           <li>
             <Link href="/about">About</Link>
           </li>

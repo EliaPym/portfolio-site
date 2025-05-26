@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Footer() {
   return (
     <footer className="flex items-center justify-center w-full h-16 bg-gray-800 text-white">
@@ -6,20 +8,20 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} Elia Pym. All rights reserved.
         </div>
         <div className="flex space-x-4">
-          <a
+          <Link
             href="https://www.linkedin.com/in/eliapym/"
             target="_blank"
             rel="noopener noreferrer"
           >
             LinkedIn
-          </a>
-          <a
+          </Link>
+          <Link
             href="https://github.com/EliaPym"
             target="_blank"
             rel="noopener noreferrer"
           >
             Github
-          </a>
+          </Link>
         </div>
       </div>
     </footer>
