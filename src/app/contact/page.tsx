@@ -10,10 +10,56 @@ import "dotenv/config";
 
 export default function Contact() {
   const [phone, setPhone] = useState("");
+  
   const theme = createTheme({
-    colorSchemes: {
-      light: true,
-      dark: true,
+    palette: {
+      mode: 'dark',
+      primary: {
+        main: '#53eafd',
+      },
+      secondary: {
+        main: '#5ee9b5',
+      },
+      background: {
+        default: '#101720',
+        paper: 'rgba(16, 23, 32, 0.8)',
+      },
+      text: {
+        primary: '#faf9f6',
+        secondary: '#d1d1d1',
+      },
+    },
+    components: {
+      MuiTextField: {
+        styleOverrides: {
+          root: {
+            '& .MuiOutlinedInput-root': {
+              '&.Mui-focused fieldset': {
+                borderColor: '#53eafd',
+                borderWidth: '2px',
+              },
+              '&:hover fieldset': {
+                borderColor: '#53eafd',
+              },
+            },
+            '& .MuiInputLabel-root.Mui-focused': {
+              color: '#53eafd',
+            },
+          },
+        },
+      },
+      MuiButton: {
+        styleOverrides: {
+          root: {
+            background: 'linear-gradient(45deg, #53eafd 30%, #5ee9b5 90%)',
+            color: '#101720',
+            fontWeight: 'bold',
+            '&:hover': {
+              background: 'linear-gradient(45deg, #5ee9b5 30%, #53eafd 90%)',
+            },
+          },
+        },
+      },
     },
   });
 
@@ -51,7 +97,7 @@ export default function Contact() {
     <>
       <div className="flex flex-col items-center justify-center w-full min-h-[calc(100vh-180px)] py-16">
         <FlickeringGrid
-          className="absolute inset-0 z-[-1] [mask-image:radial-gradient(ellipse_at_center,white_0%,transparent_60%)]"
+          className="absolute inset-0 z-[-1] [mask-image:radial-gradient(ellipse_at_center,white_0%,transparent_75%)]"
           squareSize={5}
           gridGap={6}
           color="#60A5FA"
