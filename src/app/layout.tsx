@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import "@/app/css/globals.css";
 import Navbar from "./navbar";
 import Footer from "./footer";
-import { Ubuntu, Sono, Roboto_Condensed, Roboto_Mono } from 'next/font/google';
+import { Rubik, Sono, Roboto_Condensed, Roboto_Mono } from 'next/font/google';
 
-const ubuntu = Ubuntu({
-  weight: ['400', '500', '700'],
+const rubik = Rubik({
+  weight: 'variable',
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-ubuntu',
+  variable: '--font-rubik',
 });
 
 const sono = Sono({
@@ -44,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${ubuntu.variable} ${sono.variable} ${robotoCondensed.variable} ${robotoMono.variable} antialiased min-h-screen flex flex-col`}>
+      <body className={`${rubik.variable} ${sono.variable} ${robotoCondensed.variable} ${robotoMono.variable} antialiased min-h-screen flex flex-col`}>
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />

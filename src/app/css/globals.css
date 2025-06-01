@@ -5,13 +5,17 @@
   --foreground: #ffffff;
   --primary: #faf9f6;
   --highlight-blue: #0000ff;
+  --highlight-cyan-celeste: #50EBEC;
+  --highlight-medium-aquamarine: #66DDAA;
+  --highlight-red-salmon: #ff6467;
+  --highlight-red-strawberry: #ff2056;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
-  --font-sans: var(--font-ubuntu);
+  --font-sans: var(--font-rubik);
   --font-mono: var(--font-sono);
   --font-roboto-condensed: var(--font-roboto-condensed);
   --font-roboto-mono: var(--font-roboto-mono);
@@ -67,7 +71,7 @@
   h5,
   h6 {
     color: var(--primary);
-    font-family: var(--font-ubuntu);
+    font-family: var(--font-rubik);
   }
   p {
     color: var(--primary);
@@ -102,23 +106,23 @@
     transform-origin: left;
     transform: scaleX(1);
   }
-  .epdev a {
-    box-shadow: inset 0 0 0 0 #5ee9b5;
+  .epdev a p {
+    box-shadow: inset 0 0 0 0 var(--highlight-medium-aquamarine);
     color: var(--primary);
     margin: 0;
     padding: 0 0.25rem 0 0.25rem;
     transition: color 0.3s ease-in-out, box-shadow 0.4s ease-in-out;
   }
-  .epdev a:hover {
-    box-shadow: inset 120px 0 0 0 #53eafd;
-    color: var(--background)
+  .epdev a p:hover {
+    box-shadow: inset 120px 0 0 0 var(--highlight-cyan-celeste);
+    color: var(--background);
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-ubuntu, Arial, Helvetica, sans-serif);
+  font-family: var(--font-rubik, Arial, Helvetica, sans-serif);
 }
 
 .linkedin-gradient:hover {

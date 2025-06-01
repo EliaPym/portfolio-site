@@ -6,6 +6,7 @@ import { LinkedIn, Github, Email } from "@/../public/icons/socialicons";
 import { Typewriter } from "react-simple-typewriter";
 import { SkillsMarquee } from "./components/skillsMarquee";
 import { AnimatedGradientText } from "./components/gradientText";
+import "@/app/css/globals.css";
 
 export default function Home() {
   return (
@@ -32,12 +33,12 @@ export default function Home() {
             />
           </h1>
           <hr className="border-t-2 w-[103%] self-center" />
-          <p className="text-5xl">
+          <p className="text-5xl font-light">
             Aspiring{" "}
             <AnimatedGradientText
-              className="font-medium"
-              colorFrom="#53eafd"
-              colorTo="#5ee9b5"
+              className="font-[475]"
+              colorFrom="var(--highlight-cyan-celeste)"
+              colorTo="var(--highlight-medium-aquamarine)"
               speed={0.7}
             >
               Software
@@ -45,9 +46,9 @@ export default function Home() {
             &
             <br />
             <AnimatedGradientText
-              className="font-medium"
-              colorFrom="#ff6467"
-              colorTo="#ff2056"
+              className="font-[475]"
+              colorFrom="var(--highlight-red-salmon)"
+              colorTo="var(--highlight-red-strawberry)"
               speed={0.7}
             >
               DevOps
