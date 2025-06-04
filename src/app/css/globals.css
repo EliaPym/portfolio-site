@@ -81,7 +81,6 @@
   }
   hr {
     border: 1px solid var(--foreground);
-    margin: 20px 0;
   }
   .social-icons {
     border-color: var(--highlight-blue);
@@ -117,6 +116,7 @@
     box-shadow: inset 120px 0 0 0 var(--highlight-cyan-celeste);
     color: var(--background);
   }
+  
 }
 
 body {
@@ -135,4 +135,8 @@ body {
 
 .email-gradient:hover {
   background-image: linear-gradient(to top right, #d44638, #f9a826);
+}
+
+svg text {
+  font-family: var(--font-rubik, Arial, Helvetica, sans-serif);
 }

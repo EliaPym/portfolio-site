@@ -32,7 +32,7 @@ export default function Home() {
               typeSpeed={120}
             />
           </h1>
-          <hr className="border-t-2 w-[103%] self-center" />
+          <hr className="border-t-2 w-[103%] m-[20px] self-center" />
           <p className="text-5xl font-light">
             Aspiring{" "}
             <AnimatedGradientText
