@@ -1,3 +1,8 @@
+/*
+    Credit: Aceternity - https://ui.aceternity.com/
+    Source: https://ui.aceternity.com/components/world-map
+*/
+
 "use client";
 
 import { useRef } from "react";
