@@ -88,10 +88,10 @@ const Card = ({
   colour_tr: string;
 }) => {
   return (
-    <li className="group flex flex-col items-center justify-center text-center text-primary font-extralight">
-      <div className="sm:w-42 w-30 sm:h-20 h-16 rounded-lg flex items-center justify-center bg-gradient-to-b from-slate-700 to-slate-800 relative">
+    <li className="flex flex-col items-center justify-center text-center group text-primary font-extralight">
+      <div className="relative flex items-center justify-center h-16 rounded-lg sm:w-42 w-30 sm:h-20 bg-gradient-to-b from-slate-700 to-slate-800">
         <div
-          className="sm:w-16 sm:h-16 w-12 h-12 rounded-lg flex items-center justify-center fill-white transition-all duration-200"
+          className="flex items-center justify-center w-12 h-12 transition-all duration-200 rounded-lg sm:w-16 sm:h-16 fill-white"
         >
           {icon}
         </div>
@@ -142,14 +142,14 @@ export function SkillsMarquee() {
   }, []);
 
   return (
-    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+    <div className="relative flex flex-col items-center justify-center w-full overflow-hidden">
       <Marquee pauseOnHover className="[--duration:40s]">
         {shuffledSkills.map((skill, index) => (
           <Card key={`${skill.name}-${index}`} {...skill} />
         ))}
       </Marquee>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
+      <div className="absolute inset-y-0 left-0 w-1/4 pointer-events-none bg-gradient-to-r from-background"></div>
+      <div className="absolute inset-y-0 right-0 w-1/4 pointer-events-none bg-gradient-to-l from-background"></div>
     </div>
   );
 }

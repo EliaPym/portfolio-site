@@ -109,12 +109,12 @@ export const Terminal = ({ children, className }: TerminalProps) => {
         className
       )}
     >
-      <div className="flex flex-row gap-y-2 border-b border-border p-4 shrink-0">
+      <div className="flex flex-row p-4 border-b gap-y-2 border-border shrink-0">
         <div className="relative flex-1">
           <div className="flex flex-row gap-x-2">
-            <div className="h-3 w-3 rounded-full bg-red-500"></div>
-            <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
-            <div className="h-3 w-3 rounded-full bg-green-500"></div>
+            <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+            <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+            <div className="w-3 h-3 bg-green-500 rounded-full"></div>
           </div>
 
           <p className="absolute inset-0 flex items-center justify-center text-sm font-roboto-mono">
@@ -123,8 +123,8 @@ export const Terminal = ({ children, className }: TerminalProps) => {
         </div>
       </div>
 
-      <pre className="p-4 flex-1 overflow-auto terminal-scrollbar">
-        <code className="grid gap-y-1 w-full text-wrap">{children}</code>
+      <pre className="flex-1 p-4 overflow-auto terminal-scrollbar">
+        <code className="grid w-full gap-y-1 text-wrap">{children}</code>
       </pre>
     </div>
   );

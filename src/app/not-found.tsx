@@ -35,7 +35,7 @@ export default function NotFound() {
             minLength={3}
           />
         </div>
-        <div className="text-2xl font-extralight text-center">{message404}</div>
+        <div className="text-2xl text-center font-extralight">{message404}</div>
       </div>
     </div>
   );

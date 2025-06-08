@@ -26,9 +26,9 @@ export default function Home() {
           maxOpacity={0.5}
           flickerChance={0.1}
         />
-        <div className="flex lg:flex-row flex-col items-center justify-center gap-32">
+        <div className="flex flex-col items-center justify-center gap-32 lg:flex-row">
           <div className="py-[10%] w-fit flex flex-col">
-            <h1 className="sm:text-3xl text-2xl font-roboto-mono">
+            <h1 className="text-2xl sm:text-3xl font-roboto-mono">
               {"C:/> "}
               <Typewriter
                 words={["Hi, I'm Elia"]}
@@ -40,7 +40,7 @@ export default function Home() {
               />
             </h1>
             <hr className="border-t-2 w-[103%] m-[20px] self-center" />
-            <p className="sm:text-5xl text-3xl font-light">
+            <p className="text-3xl font-light sm:text-5xl">
               Aspiring{" "}
               <AnimatedGradientText
                 className="font-[475]"
@@ -62,7 +62,7 @@ export default function Home() {
               </AnimatedGradientText>{" "}
               Engineer
             </p>
-            <div className="flex flex-row sm:justify-start justify-center space-x-6 mt-6">
+            <div className="flex flex-row justify-center mt-6 space-x-6 sm:justify-start">
               <SocialIcon
                 link="https://www.linkedin.com/in/eliapym/"
                 variant="linkedin"
@@ -88,15 +88,15 @@ export default function Home() {
               $ sudo find ~/ -name &quot;career_path&quot;
             </TypingAnimation>
 
-            <AnimatedSpan delay={3800} className="text-green-500 pl-4">
+            <AnimatedSpan delay={3800} className="pl-4 text-green-500">
               <span>find: /home/elia/tech/software_engineering</span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={4000} className="text-green-500 pl-4">
+            <AnimatedSpan delay={4000} className="pl-4 text-green-500">
               <span>find: /home/elia/tech/devops</span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={4200} className="text-green-500 pl-4">
+            <AnimatedSpan delay={4200} className="pl-4 text-green-500">
               <span>find: /home/elia/tech/security</span>
             </AnimatedSpan>
 
@@ -120,11 +120,11 @@ export default function Home() {
               $ git push origin prod
             </TypingAnimation>
 
-            <AnimatedSpan delay={12000} className="text-red-500 pl-4">
+            <AnimatedSpan delay={12000} className="pl-4 text-red-500">
               <span>Error: Cannot push to production on Friday at 4:59 PM</span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={12200} className="text-yellow-500 pl-4">
+            <AnimatedSpan delay={12200} className="pl-4 text-yellow-500">
               <span>Reason: Sod&apos;s Law Protection Enabled</span>
             </AnimatedSpan>
 
@@ -132,7 +132,7 @@ export default function Home() {
               $ git push origin prod --force
             </TypingAnimation>
 
-            <AnimatedSpan delay={16000} className="text-green-500 pl-4">
+            <AnimatedSpan delay={16000} className="pl-4 text-green-500">
               64d5297...42e1f97 prod -&gt; prod (forced update)
             </AnimatedSpan>
 
@@ -140,7 +140,7 @@ export default function Home() {
 
             <AnimatedSpan
               delay={17000}
-              className="text-muted-foreground border-t pt-2"
+              className="pt-2 border-t text-muted-foreground"
             >
               <span>Welcome to portfolio v1.0.0 - Ready to collaborate!</span>
             </AnimatedSpan>
