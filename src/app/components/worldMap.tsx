@@ -18,10 +18,7 @@ interface MapProps {
   lineColor?: string;
 }
 
-export function WorldMap({
-  dots = [],
-  lineColor = "#0ea5e9",
-}: MapProps) {
+export function WorldMap({ dots = [], lineColor = "#0ea5e9" }: MapProps) {
   const svgRef = useRef<SVGSVGElement>(null);
   const map = new DottedMap({ height: 100, grid: "diagonal" });
 
@@ -48,10 +45,11 @@ export function WorldMap({
   };
 
   return (
-    <div className="w-full aspect-[2/1] bg-background rounded-lg  relative font-sans">
+    <div className="h-full aspect-[2/1] bg-background rounded-lg  relative font-sans">
       <Image
         src={`data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`}
-        className="h-full w-full [mask-image:linear-gradient(to_bottom,transparent_3%,white_15%,white_85%,transparent_97%)] pointer-events-none select-none"
+        className="h-full w-full [mask-image:linear-gradient(to_bottom,transparent_1%,white_15%,white_85%,transparent_99%),linear-gradient(to_right,transparent_0%,white_3%,white_97%,transparent_100%)]
+        [mask-composite:intersect] pointer-events-none select-none"
         alt="world map"
         height="495"
         width="1056"
@@ -60,7 +58,7 @@ export function WorldMap({
       <svg
         ref={svgRef}
         viewBox="0 0 800 400"
-        className="w-full h-full absolute inset-0 pointer-events-none select-none"
+        className="absolute inset-0 w-full h-full pointer-events-none select-none"
       >
         {dots.map((dot, i) => {
           const startPoint = projectPoint(dot.start.lat, dot.start.lng);

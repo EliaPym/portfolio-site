@@ -98,7 +98,7 @@ export default function Contact() {
   return (
     <>
       <div className="flex flex-col items-center justify-center w-full min-h-[calc(100vh-170px)] py-16">
-        <div className="absolute inset-0 z-[-1]">
+        <div className="absolute inset-0 z-[-1] justify-center items-center flex overflow-clip">
           <WorldMap
             dots={[
               {
@@ -129,7 +129,7 @@ export default function Contact() {
           />
         </div>
 
-        <div className="flex flex-col items-center justify-center w-fit h-fit">
+        <div className="flex flex-col items-center justify-center sm:w-fit w-[90%] h-fit">
           <div className="relative">
             <svg className="w-full max-w-xs mx-auto" viewBox="0 0 300 80">
               <text
@@ -146,7 +146,7 @@ export default function Contact() {
               </text>
             </svg>
           </div>
-            <hr className="border-t-1 w-[103%] self-center" />
+            <hr className="border-t-1 sm:max-w-none max-w-md w-[103%] self-center" />
           {/*
             First Name
             Last Name
@@ -161,7 +161,7 @@ export default function Contact() {
             onSubmit={handleSubmit}
           >
             <ThemeProvider theme={theme}>
-              <div className="flex flex-row gap-4 w-full">
+              <div className="flex flex-col w-full gap-4 sm:flex-row">
                 <TextField
                   id="first_name"
                   name="first_name"
@@ -191,7 +191,7 @@ export default function Contact() {
                 required
                 type="email"
               />
-              <div className="flex flex-row gap-4 w-full">
+              <div className="flex flex-col w-full gap-4 sm:flex-row">
                 <MuiPhone
                   value={phone}
                   onChange={(phone) => setPhone(phone)}

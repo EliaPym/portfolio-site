@@ -1,19 +1,59 @@
 "use client";
 
 import Link from "next/link";
-import { DevIcon } from "@/../public/icons/devIcon";
+import { DevIcon } from "@/../public/icons/icons";
+import React from "react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
-      <nav className="flex items-center justify-between p-4 text-primary">
-        <div className="text-xl font-roboto-mono font-light epdev">
-          <Link href="/" className="flex flex-row items-center" >
+    <div className="text-primary backdrop-blur-xs sm:backdrop-blur-none">
+      <nav className="flex items-center justify-between p-4">
+
+        {/* Burger Icon */}
+        <button
+          className="flex flex-col gap-1 sm:hidden w-fit h-fit"
+          onClick={toggleMenu}
+        >
+          <span
+            className={`block w-6 h-1 bg-transparent rounded-full border border-primary transition-all duration-300 ease-in-out ${
+              isOpen ? "rotate-45 translate-y-2" : ""
+            }`}
+          ></span>
+          <span
+            className={`block w-6 h-1 bg-transparent rounded-full border border-primary transition-all duration-300 ease-in-out ${
+              isOpen ? "opacity-0" : "opacity-100"
+            }`}
+          />
+          <span
+            className={`block w-6 h-1 bg-background rounded-full border border-primary transition-all duration-300 ease-in-out ${
+              isOpen ? "-rotate-45 -translate-y-2" : ""
+            }`}
+          ></span>
+          <span
+            className={`block w-2 h-0.5 bg-background transition-all duration-400 ease-in-out rotate-45 -translate-y-[15px] translate-x-2 ${
+              isOpen ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        </button>
+
+        {/* Logo */}
+        <div className="text-xl font-light font-roboto-mono epdev">
+          <Link href="/" className="flex flex-row items-center">
             <DevIcon className="w-10 h-10 mr-2 fill-primary" />
             <p>E-P.dev</p>
           </Link>
         </div>
-        <ul className="flex space-x-8 text-lg navbar pr-8">
+
+        {/* Desktop Navigation */}
+        <ul className="hidden pr-8 space-x-8 text-lg sm:flex navbar">
           <li>
             <Link href="/about">About</Link>
           </li>
@@ -31,6 +71,75 @@ export default function Navbar() {
           </li>
         </ul>
       </nav>
+
+      {/* Mobile Navigation */}
+      <div
+        className={`sm:hidden transition-all duration-800 ease-in-out overflow-hidden border-b border-primary ${
+          isOpen ? "max-h-80" : "max-h-0"
+        }`}
+      >
+        <ul className="flex flex-col items-start pb-5 pl-8 space-y-4 font-sans text-lg font-light bg-gradient-to-t from-black/35 to-transparent navbar">
+          <li>
+            <Link href="/" onClick={() => setIsOpen(false)}>
+              <span className={`${usePathname() === "/" ? "ml-4 italic" : ""}`}>
+                {usePathname() === "/" ? ">_" : ""}Home
+              </span>
+            </Link>
+          </li>
+          <li>
+            <Link href="/about" onClick={() => setIsOpen(false)}>
+              <span
+                className={`${usePathname() === "/about" ? "ml-4 italic" : ""}`}
+              >
+                {usePathname() === "/about" ? ">_" : ""}About
+              </span>
+            </Link>
+          </li>
+          <li>
+            <Link href="/projects" onClick={() => setIsOpen(false)}>
+              <span
+                className={`${
+                  usePathname() === "/projects" ? "ml-4 italic" : ""
+                }`}
+              >
+                {usePathname() === "/projects" ? ">_" : ""}Projects
+              </span>
+            </Link>
+          </li>
+          <li>
+            <Link href="/blog" onClick={() => setIsOpen(false)}>
+              <span
+                className={`${usePathname() === "/blog" ? "ml-4 italic" : ""}`}
+              >
+                {usePathname() === "/blog" ? ">_" : ""}Blog
+              </span>
+            </Link>
+          </li>
+          <li>
+            <Link href="/resume" onClick={() => setIsOpen(false)}>
+              <span
+                className={`${
+                  usePathname() === "/resume" ? "ml-4 italic" : ""
+                }`}
+              >
+                {usePathname() === "/resume" ? ">_" : ""}Resume
+              </span>
+            </Link>
+          </li>
+          <li>
+            <Link href="/contact" onClick={() => setIsOpen(false)}>
+              <span
+                className={`${
+                  usePathname() === "/contact" ? "ml-4 italic" : ""
+                }`}
+              >
+                {usePathname() === "/contact" ? ">_" : ""}Contact
+              </span>
+            </Link>
+          </li>
+        </ul>
+      </div>
+      </div>
     </>
   );
 }

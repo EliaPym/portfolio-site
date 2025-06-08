@@ -25,8 +25,7 @@ export default function NotFound() {
       {/* Credit: CuiCui - https://cuicui.day/other/patterns */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:35px_34px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] -z-10" />
       <div className="p-[10%] flex flex-col items-center relative z-10">
-        <div className="count-up-text font-light font-roboto-mono text-[10rem]">
-          
+        <div className="count-up-text font-light font-roboto-mono lg:text-[10rem] md:text-[6rem] text-[4rem]">
           <CountUp
             from={0}
             to={404}
