@@ -1,9 +1,4 @@
-/*
-    Credit: Magic UI - https://magicui.design/ (Modified by me)
-    Source: https://magicui.design/docs/components/marquee
-*/
-
-import { Marquee } from "@/app/components/home/marquee";
+import Marquee from "react-fast-marquee";
 import { useEffect, useState } from "react";
 
 import * as SkillsIcons from "@/../public/icons/skillsIcons";
@@ -64,7 +59,7 @@ const initialSkills = [
   {
     icon: <SkillsIcons.AWSAPIGatewayIcon />,
     name: "AWS API Gateway",
-  }
+  },
 ];
 
 // Fisher-Yates shuffle algorithm
@@ -88,11 +83,9 @@ const Card = ({
   colour_tr: string;
 }) => {
   return (
-    <li className="flex flex-col items-center justify-center text-center group text-primary font-extralight">
+    <li className="flex flex-col items-center justify-center px-2 text-center group text-primary font-extralight">
       <div className="relative flex items-center justify-center h-16 rounded-lg sm:w-42 w-30 sm:h-20 bg-gradient-to-b from-slate-700 to-slate-800">
-        <div
-          className="flex items-center justify-center w-12 h-12 transition-all duration-200 rounded-lg sm:w-16 sm:h-16 fill-white"
-        >
+        <div className="flex items-center justify-center w-12 h-12 transition-all duration-200 rounded-lg sm:w-16 sm:h-16 fill-white">
           {icon}
         </div>
         <div className="absolute text-transparent opacity-0 sm:text-xl text-md w-[90%] transition-all duration-600 text-shadow-md/70 text-shadow-black">
@@ -107,7 +100,7 @@ const Card = ({
                 "div:first-of-type"
               ) as HTMLElement;
               const textDiv = parent.querySelector("div:nth-of-type(2)");
-              if (iconDiv) iconDiv.style.filter = "blur(5px)";
+              if (iconDiv) iconDiv.style.filter = "blur(3px) opacity(0.6)";
               if (textDiv) {
                 textDiv.classList.remove("text-transparent", "opacity-0");
                 textDiv.classList.add("text-primary", "opacity-100");
@@ -135,21 +128,28 @@ const Card = ({
 };
 
 export function SkillsMarquee() {
-  const [shuffledSkills, setShuffledSkills] = useState(() => shuffleArray(initialSkills));
-  
+  const [shuffledSkills, setShuffledSkills] = useState(() =>
+    shuffleArray(initialSkills)
+  );
+
   useEffect(() => {
     setShuffledSkills(shuffleArray(initialSkills));
   }, []);
 
   return (
-    <div className="relative flex flex-col items-center justify-center w-full overflow-hidden">
-      <Marquee pauseOnHover className="[--duration:40s]">
+    <div className="relative flex flex-col items-center justify-center w-[97%] ">
+      <Marquee
+        pauseOnHover
+        direction="left"
+        gradient
+        gradientColor="var(--background)"
+        loop={0}
+        className="overflow-clip"
+      >
         {shuffledSkills.map((skill, index) => (
           <Card key={`${skill.name}-${index}`} {...skill} />
         ))}
       </Marquee>
-      <div className="absolute inset-y-0 left-0 w-1/4 pointer-events-none bg-gradient-to-r from-background"></div>
-      <div className="absolute inset-y-0 right-0 w-1/4 pointer-events-none bg-gradient-to-l from-background"></div>
     </div>
   );
 }

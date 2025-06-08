@@ -39,7 +39,9 @@ export default function Home() {
           <TerminalWrapper />
         </div>
       </div>
-      <SkillsMarqueeWrapper />
+      <div className="flex items-center justify-center">
+        <SkillsMarqueeWrapper />
+      </div>
     </div>
   );
 }

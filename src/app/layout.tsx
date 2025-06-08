@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "@/app/css/globals.css";
-import Navbar from "./navbar";
-import Footer from "./footer";
+import Navbar from "./layout/navbar";
+import Footer from "./layout/footer";
 import { Rubik, Sono, Roboto_Condensed, Roboto_Mono } from 'next/font/google';
 
 const rubik = Rubik({
