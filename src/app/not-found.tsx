@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import "./css/globals.css";
 
-import CountUp from "./components/counter";
+import CountUp from "./components/text-effects/counter";
 
 export default function NotFound() {
   const [message404, setMessage404] = useState(

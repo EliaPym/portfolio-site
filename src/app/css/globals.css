@@ -5,8 +5,8 @@
   --foreground: #ffffff;
   --primary: #faf9f6;
   --highlight-blue: #0000ff;
-  --highlight-cyan-celeste: #50EBEC;
-  --highlight-medium-aquamarine: #66DDAA;
+  --highlight-cyan-celeste: #50ebec;
+  --highlight-medium-aquamarine: #66ddaa;
   --highlight-red-salmon: #ff6467;
   --highlight-red-strawberry: #ff2056;
 }
@@ -116,7 +116,6 @@
     box-shadow: inset 120px 0 0 0 var(--highlight-cyan-celeste);
     color: var(--background);
   }
-  
 }
 
 body {

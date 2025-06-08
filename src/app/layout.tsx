@@ -33,8 +33,8 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Home - Portfolio",
-  description: "Home page",
+  title: "E-P.dev",
+  description: "",
 };
 
 export default function RootLayout({

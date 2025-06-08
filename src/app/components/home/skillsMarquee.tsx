@@ -3,7 +3,7 @@
     Source: https://magicui.design/docs/components/marquee
 */
 
-import { Marquee } from "@/app/components/marquee";
+import { Marquee } from "@/app/components/home/marquee";
 import { useEffect, useState } from "react";
 
 import * as SkillsIcons from "@/../public/icons/skillsIcons";
