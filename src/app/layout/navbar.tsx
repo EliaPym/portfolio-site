@@ -14,7 +14,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="text-primary backdrop-blur-xs sm:backdrop-blur-none">
+      <div className="text-base-content backdrop-blur-xs sm:backdrop-blur-none">
         <nav className="flex items-center justify-between p-4">
           {/* Burger Icon */}
           <button
@@ -22,22 +22,22 @@ export default function Navbar() {
             onClick={toggleMenu}
           >
             <span
-              className={`block w-6 h-1 bg-transparent rounded-full border border-primary transition-all duration-300 ease-in-out ${
+              className={`block w-6 h-1 bg-transparent rounded-full border border-base-content transition-all duration-300 ease-in-out ${
                 isOpen ? "rotate-45 translate-y-2" : ""
               }`}
             ></span>
             <span
-              className={`block w-6 h-1 bg-transparent rounded-full border border-primary transition-all duration-300 ease-in-out ${
+              className={`block w-6 h-1 bg-base-100 rounded-full border border-base-content transition-all duration-300 ease-in-out ${
                 isOpen ? "opacity-0" : "opacity-100"
               }`}
             />
             <span
-              className={`block w-6 h-1 bg-background rounded-full border border-primary transition-all duration-300 ease-in-out ${
+              className={`block w-6 h-1 bg-base-100 rounded-full border border-base-content transition-all duration-300 ease-in-out ${
                 isOpen ? "-rotate-45 -translate-y-2" : ""
               }`}
             ></span>
             <span
-              className={`block w-2 h-0.5 bg-background transition-all duration-400 ease-in-out rotate-45 -translate-y-[15px] translate-x-2 ${
+              className={`block w-2 h-0.5 bg-base-100 transition-all duration-400 ease-in-out rotate-45 -translate-y-[15px] translate-x-2 ${
                 isOpen ? "opacity-100" : "opacity-0"
               }`}
             />
@@ -46,7 +46,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="text-xl font-light font-roboto-mono epdev">
             <Link href="/" className="flex flex-row items-center">
-              <DevIcon className="w-10 h-10 mr-2 fill-primary" />
+              <DevIcon className="w-10 h-10 mr-2 fill-base-content" />
               <p>E-P.dev</p>
             </Link>
           </div>
@@ -73,7 +73,7 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         <div
-          className={`sm:hidden transition-all duration-800 ease-in-out overflow-hidden border-b border-primary ${
+          className={`sm:hidden transition-all duration-800 ease-in-out overflow-hidden border-b border-base-content ${
             isOpen ? "max-h-80" : "max-h-0"
           }`}
         >

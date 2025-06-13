@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, TextField } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { MuiPhone } from "@/app/components/contact/phoneInput";
@@ -8,23 +8,55 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 export default function ContactForm() {
   const [phone, setPhone] = useState("");
+  const [themeColors, setThemeColors] = useState({
+    baseContent: "#e9e5d8", // Default fallback value
+    cyanCeleste: "#50ebec", // Default fallback value
+    mediumAquamarine: "#66ddaa", // Default fallback value
+    background: "#101720", // Default fallback value
+  });
 
+  // Extract CSS variables on component mount
+  useEffect(() => {
+    // Get CSS variable values from the document root
+    const root = document.documentElement;
+    const computedStyle = getComputedStyle(root);
+
+    const baseContent = computedStyle
+      .getPropertyValue("--color-base-content")
+      .trim();
+    const cyanCeleste = computedStyle
+      .getPropertyValue("--color-highlight-cyan-celeste")
+      .trim();
+    const mediumAquamarine = computedStyle
+      .getPropertyValue("--color-highlight-medium-aquamarine")
+      .trim();
+    const background = computedStyle.getPropertyValue("--color-base-100").trim();
+
+    setThemeColors({
+      baseContent: baseContent || "#e9e5d8",
+      cyanCeleste: cyanCeleste || "#50ebec",
+      mediumAquamarine: mediumAquamarine || "#66ddaa",
+      background: background || "#101720",
+    });
+  }, []);
+
+  // Create theme with the extracted colors
   const theme = createTheme({
     palette: {
       mode: "dark",
       primary: {
-        main: "#53eafd",
+        main: themeColors.baseContent,
       },
       secondary: {
-        main: "#5ee9b5",
+        main: themeColors.baseContent,
       },
       background: {
-        default: "#101720",
+        default: themeColors.background,
         paper: "rgba(16, 23, 32, 0.8)",
       },
       text: {
-        primary: "#faf9f6",
-        secondary: "#d1d1d1",
+        primary: themeColors.baseContent,
+        secondary: themeColors.baseContent,
       },
     },
     components: {
@@ -33,15 +65,31 @@ export default function ContactForm() {
           root: {
             "& .MuiOutlinedInput-root": {
               "&.Mui-focused fieldset": {
-                borderColor: "#53eafd",
+                borderColor: themeColors.baseContent,
                 borderWidth: "2px",
               },
               "&:hover fieldset": {
-                borderColor: "#53eafd",
+                borderColor: themeColors.baseContent,
+              },
+              // Add this to style the input text
+              "& input": {
+                color: themeColors.baseContent,
+              },
+              // Add this to style multiline text
+              "& textarea": {
+                color: themeColors.baseContent,
+              },
+              // Add placeholder styling
+              "& input::placeholder, & textarea::placeholder": {
+                color: `${themeColors.baseContent}80`, // Using hex with 80 opacity
+                opacity: 0.7,
               },
             },
-            "& .MuiInputLabel-root.Mui-focused": {
-              color: "#53eafd",
+            "& .MuiInputLabel-root": {
+              color: themeColors.baseContent,
+              "&.Mui-focused": {
+                color: themeColors.baseContent,
+              },
             },
           },
         },
@@ -49,11 +97,11 @@ export default function ContactForm() {
       MuiButton: {
         styleOverrides: {
           root: {
-            background: "linear-gradient(45deg, #53eafd 30%, #5ee9b5 90%)",
-            color: "#101720",
+            background: `linear-gradient(45deg, ${themeColors.cyanCeleste} 30%, ${themeColors.mediumAquamarine} 90%)`,
+            color: themeColors.background,
             fontWeight: "bold",
             "&:hover": {
-              background: "linear-gradient(45deg, #5ee9b5 30%, #53eafd 90%)",
+              background: `linear-gradient(45deg, ${themeColors.mediumAquamarine} 30%, ${themeColors.cyanCeleste} 90%)`,
             },
           },
         },

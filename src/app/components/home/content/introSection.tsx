@@ -24,8 +24,8 @@ export default function IntroSection() {
               Aspiring{" "}
               <AnimatedGradientText
                 className="font-[475]"
-                colorFrom="var(--highlight-cyan-celeste)"
-                colorTo="var(--highlight-medium-aquamarine)"
+                colorFrom="var(--color-highlight-cyan-celeste)"
+                colorTo="var(--color-highlight-medium-aquamarine)"
                 speed={0.7}
               >
                 Software
@@ -34,8 +34,8 @@ export default function IntroSection() {
               <br />
               <AnimatedGradientText
                 className="font-[475]"
-                colorFrom="var(--highlight-red-salmon)"
-                colorTo="var(--highlight-red-strawberry)"
+                colorFrom="var(--color-highlight-red-salmon)"
+                colorTo="var(--color-highlight-red-strawberry)"
                 speed={0.7}
               >
                 DevOps

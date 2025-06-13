@@ -83,9 +83,9 @@ const Card = ({
   colour_tr: string;
 }) => {
   return (
-    <li className="flex flex-col items-center justify-center px-2 text-center group text-primary font-extralight">
+    <li className="flex flex-col items-center justify-center px-2 text-center group text-base-content font-extralight">
       <div className="relative flex items-center justify-center h-16 rounded-lg sm:w-42 w-30 sm:h-20 bg-gradient-to-b from-slate-700 to-slate-800">
-        <div className="flex items-center justify-center w-12 h-12 transition-all duration-200 rounded-lg sm:w-16 sm:h-16 fill-white">
+        <div className="flex items-center justify-center w-12 h-12 transition-all duration-200 rounded-lg sm:w-16 sm:h-16 fill-base-content">
           {icon}
         </div>
         <div className="absolute text-transparent opacity-0 sm:text-xl text-md w-[90%] transition-all duration-600 text-shadow-md/70 text-shadow-black">
@@ -103,7 +103,7 @@ const Card = ({
               if (iconDiv) iconDiv.style.filter = "blur(3px) opacity(0.6)";
               if (textDiv) {
                 textDiv.classList.remove("text-transparent", "opacity-0");
-                textDiv.classList.add("text-primary", "opacity-100");
+                textDiv.classList.add("text-base-content", "opacity-100");
               }
             }
           }}
@@ -117,7 +117,7 @@ const Card = ({
               if (iconDiv) iconDiv.style.filter = "blur(0px)";
               if (textDiv) {
                 textDiv.classList.add("text-transparent", "opacity-0");
-                textDiv.classList.remove("text-primary", "opacity-100");
+                textDiv.classList.remove("text-base-content", "opacity-100");
               }
             }
           }}
@@ -142,7 +142,7 @@ export function SkillsMarquee() {
         pauseOnHover
         direction="left"
         gradient
-        gradientColor="var(--background)"
+        gradientColor="var(--color-base-100)"
         loop={0}
         className="overflow-clip"
       >

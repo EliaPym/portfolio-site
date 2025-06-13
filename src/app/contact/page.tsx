@@ -44,8 +44,8 @@ export default function Contact() {
                 y="60%"
                 textAnchor="middle"
                 className="text-4xl font-light"
-                fill="var(--primary)"
-                stroke="var(--background)"
+                fill="var(--color-base-content)"
+                stroke="var(--color-base-100)"
                 strokeWidth="7"
                 paintOrder="stroke fill"
               >

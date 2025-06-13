@@ -105,16 +105,16 @@ export const Terminal = ({ children, className }: TerminalProps) => {
   return (
     <div
       className={cn(
-        "z-0 lg:h-[400px] lg:w-[550px] w-[80%] max-w-[550px] h-[300px] rounded-lg border border-border bg-gray-950 flex flex-col font-roboto-mono",
+        "z-0 lg:h-[400px] lg:w-[550px] w-[80%] max-w-[550px] h-[300px] rounded-lg border border-border bg-base-300 flex flex-col font-roboto-mono",
         className
       )}
     >
       <div className="flex flex-row p-4 border-b gap-y-2 border-border shrink-0">
         <div className="relative flex-1">
           <div className="flex flex-row gap-x-2">
-            <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-            <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-            <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+            <div className="w-3 h-3 rounded-full bg-error"></div>
+            <div className="w-3 h-3 rounded-full bg-warning"></div>
+            <div className="w-3 h-3 rounded-full bg-success"></div>
           </div>
 
           <p className="absolute inset-0 flex items-center justify-center text-sm font-roboto-mono">

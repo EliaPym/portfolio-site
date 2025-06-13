@@ -7,20 +7,20 @@ import {
 
 export default function TerminalWrapper() {
   return (
-    <Terminal>
+    <Terminal className="text-base-content">
       <TypingAnimation>
         $ sudo find ~/ -name &quot;career_path&quot;
       </TypingAnimation>
 
-      <AnimatedSpan delay={3800} className="pl-4 text-green-500">
+      <AnimatedSpan delay={3800} className="pl-4 text-success">
         <span>find: /home/elia/tech/software_engineering</span>
       </AnimatedSpan>
 
-      <AnimatedSpan delay={4000} className="pl-4 text-green-500">
+      <AnimatedSpan delay={4000} className="pl-4 text-success">
         <span>find: /home/elia/tech/devops</span>
       </AnimatedSpan>
 
-      <AnimatedSpan delay={4200} className="pl-4 text-green-500">
+      <AnimatedSpan delay={4200} className="pl-4 text-success">
         <span>find: /home/elia/tech/security</span>
       </AnimatedSpan>
 
@@ -34,19 +34,19 @@ export default function TerminalWrapper() {
 
       <AnimatedSpan delay={9200}>
         <span className="pl-4">
-          <span className="text-yellow-500">13 files</span> changed,{" "}
-          <span className="text-green-500">42 753</span> insertions(+),{" "}
-          <span className="text-red-500">2 823</span> deletions(-)
+          <span className="text-warning">13 files</span> changed,{" "}
+          <span className="text-success">42 753</span> insertions(+),{" "}
+          <span className="text-error">2 823</span> deletions(-)
         </span>
       </AnimatedSpan>
 
       <TypingAnimation delay={10000}>$ git push origin prod</TypingAnimation>
 
-      <AnimatedSpan delay={12000} className="pl-4 text-red-500">
+      <AnimatedSpan delay={12000} className="pl-4 text-error">
         <span>Error: Cannot push to production on Friday at 4:59 PM</span>
       </AnimatedSpan>
 
-      <AnimatedSpan delay={12200} className="pl-4 text-yellow-500">
+      <AnimatedSpan delay={12200} className="pl-4 text-warning">
         <span>Reason: Sod&apos;s Law Protection Enabled</span>
       </AnimatedSpan>
 
@@ -54,7 +54,7 @@ export default function TerminalWrapper() {
         $ git push origin prod --force
       </TypingAnimation>
 
-      <AnimatedSpan delay={16000} className="pl-4 text-green-500">
+      <AnimatedSpan delay={16000} className="pl-4 text-success">
         64d5297...42e1f97 prod -&gt; prod (forced update)
       </AnimatedSpan>
 
