@@ -61,8 +61,8 @@ export default function TerminalWrapper() {
       <TypingAnimation delay={17000}>$ sudo rm -rf /*</TypingAnimation>
 
       <AnimatedSpan
-        delay={17000}
-        className="pt-2 border-t text-muted-foreground"
+        delay={19000}
+        className="pt-1.5 mt-1.5 border-t text-muted-foreground"
       >
         <span>Welcome to portfolio v1.0.0 - Ready to collaborate!</span>
       </AnimatedSpan>

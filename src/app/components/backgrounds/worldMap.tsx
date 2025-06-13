@@ -26,7 +26,7 @@ export function WorldMap({ dots = [], lineColor = "var(--color-info)" }: MapProp
     radius: 0.18,
     color: "#faf9f620",
     shape: "hexagon",
-    backgroundColor: "var(--background)",
+    backgroundColor: "var(--color-base-100)",
   });
 
   const projectPoint = (lat: number, lng: number) => {

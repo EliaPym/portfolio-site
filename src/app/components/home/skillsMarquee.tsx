@@ -84,7 +84,7 @@ const Card = ({
 }) => {
   return (
     <li className="flex flex-col items-center justify-center px-2 text-center group text-base-content font-extralight">
-      <div className="relative flex items-center justify-center h-16 rounded-lg sm:w-42 w-30 sm:h-20 bg-gradient-to-b from-slate-700 to-slate-800">
+      <div className="relative flex items-center justify-center h-16 transition-all duration-300 ease-in-out rounded-lg sm:w-42 w-30 sm:h-20 bg-neutral hover:bg-base-200">
         <div className="flex items-center justify-center w-12 h-12 transition-all duration-200 rounded-lg sm:w-16 sm:h-16 fill-base-content">
           {icon}
         </div>

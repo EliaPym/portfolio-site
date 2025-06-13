@@ -7,6 +7,7 @@
 
 import { cn } from "@/lib/utils";
 import { motion, MotionProps } from "motion/react";
+import React from "react";
 import { useEffect, useRef, useState } from "react";
 
 interface AnimatedSpanProps extends MotionProps {
@@ -102,13 +103,49 @@ interface TerminalProps {
 }
 
 export const Terminal = ({ children, className }: TerminalProps) => {
+  const scrollContainerRef = useRef<HTMLPreElement>(null);
+  const [childrenArray, setChildrenArray] = useState<React.ReactNode[]>([]);
+
+  // Detect changes to children to trigger scrolling
+  useEffect(() => {
+    const childArray = React.Children.toArray(children);
+    setChildrenArray(childArray);
+
+    // Scroll to bottom whenever children change
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTop = scrollContainerRef.current.scrollHeight;
+    }
+  }, [children]);
+
+  // Also scroll when typing animation adds characters
+  useEffect(() => {
+    const scrollToBottom = () => {
+      if (scrollContainerRef.current) {
+        scrollContainerRef.current.scrollTop = scrollContainerRef.current.scrollHeight;
+      }
+    };
+
+    // Use MutationObserver to detect DOM changes in the terminal
+    if (scrollContainerRef.current) {
+      const observer = new MutationObserver(scrollToBottom);
+      observer.observe(scrollContainerRef.current, {
+        childList: true,
+        subtree: true,
+        characterData: true,
+      });
+
+      return () => observer.disconnect();
+    }
+  }, []);
+
   return (
     <div
       className={cn(
-        "z-0 lg:h-[400px] lg:w-[550px] w-[80%] max-w-[550px] h-[300px] rounded-lg border border-border bg-base-300 flex flex-col font-roboto-mono",
+        "z-0 lg:h-[350px] lg:w-[550px] w-[80%] max-w-[550px] h-[300px] rounded-lg border border-border bg-base-300 flex flex-col font-roboto-mono",
         className
       )}
     >
+      {/* Header */}
       <div className="flex flex-row p-4 border-b gap-y-2 border-border shrink-0">
         <div className="relative flex-1">
           <div className="flex flex-row gap-x-2">
@@ -123,7 +160,16 @@ export const Terminal = ({ children, className }: TerminalProps) => {
         </div>
       </div>
 
-      <pre className="flex-1 p-4 overflow-auto terminal-scrollbar">
+      {/* Terminal content with scroll ref */}
+      <pre
+        ref={(element) => {
+          // Only attach the ref for scroll behavior on screens wider than 640px (sm)
+          if (typeof window !== 'undefined' && window.innerWidth >= 640) {
+        scrollContainerRef.current = element;
+          }
+        }}
+        className="flex-1 p-4 overflow-auto terminal-scrollbar sm:scroll-smooth"
+      >
         <code className="grid w-full gap-y-1 text-wrap">{children}</code>
       </pre>
     </div>

@@ -14,7 +14,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="text-base-content backdrop-blur-xs sm:backdrop-blur-none">
+      <div className="px-2 text-base-content backdrop-blur-xs sm:backdrop-blur-none md:px-5">
         <nav className="flex items-center justify-between p-4">
           {/* Burger Icon */}
           <button

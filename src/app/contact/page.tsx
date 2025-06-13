@@ -46,7 +46,7 @@ export default function Contact() {
                 className="text-4xl font-light"
                 fill="var(--color-base-content)"
                 stroke="var(--color-base-100)"
-                strokeWidth="7"
+                strokeWidth="3"
                 paintOrder="stroke fill"
               >
                 Contact
