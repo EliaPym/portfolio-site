@@ -1,16 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  /* Base Colors - Dark Blue-Gray */
-  --color-base-100: #1a2233;
-  --color-base-200: #151d2b;
-  --color-base-300: #0f1621;
-  --color-base-content: #f5eddc;
+  /* Common variables that don't change between themes */
+  --transition-speed: 0.3s;
+}
 
-  /* Primary - Teal/Turquoise */
-  --color-primary: #36b5ad;
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Dark Theme (Default) */
+:root {
+  /* Your existing color definitions */
+  --color-base-100: #1e293b;
+  --color-base-200: #172033;
+  --color-base-300: #111827;
+  --color-base-content: #f7eee2;
+  
+  --color-primary: #64b6ac;
   --color-primary-content: #0f1621;
-
+  
   /* Secondary - Soft Lavender */
   --color-secondary: #9d8ec7;
   --color-secondary-content: #0f1621;
@@ -38,6 +47,67 @@
   --color-highlight-medium-aquamarine: #50c8a0;
   --color-highlight-red-salmon: #ff6c6e;
   --color-highlight-red-strawberry: #ff3366;
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --color-base-100: #f8f9fa;
+  --color-base-200: #e9ecef;
+  --color-base-300: #dee2e6;
+  --color-base-content: #212529;
+  
+  --color-primary: #3a7d76;
+  --color-primary-content: #ffffff;
+  
+  --color-secondary: #c25e46;
+  --color-secondary-content: #ffffff;
+  
+  --color-accent: #d9b061;
+  --color-accent-content: #ffffff;
+
+  --color-neutral: #c1c1c1;
+  --color-neutral-content: #495057;
+  
+  /* Status colors for light theme */
+  --color-info: #0284c7;
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+  
+  /* Highlight colors for light theme */
+  --color-highlight-cyan-celeste: #0ea5e9;
+  --color-highlight-medium-aquamarine: #14b8a6;
+  --color-highlight-red-salmon: #ef4444;
+  --color-highlight-red-strawberry: #dc2626;
+}
+
+/* High Contrast / Accessibility Theme */
+[data-theme="dark-high-contrast"] {
+  --color-base-100: #000000;
+  --color-base-200: #121212;
+  --color-base-300: #1a1a1a;
+  --color-base-content: #ffffff;
+  
+  --color-primary: #00ccff;
+  --color-primary-content: #000000;
+  
+  --color-secondary: #ffaa00;
+  --color-secondary-content: #000000;
+  
+  --color-accent: #ff0099;
+  --color-accent-content: #000000;
+  
+  /* High contrast status colors */
+  --color-info: #00ccff;
+  --color-success: #00ff00;
+  --color-warning: #ffff00;
+  --color-error: #ff0000;
+  
+  /* High contrast highlight colors */
+  --color-highlight-cyan-celeste: #00ffff;
+  --color-highlight-medium-aquamarine: #00ff99;
+  --color-highlight-red-salmon: #ff6666;
+  --color-highlight-red-strawberry: #ff0066;
 }
 
 @theme inline {

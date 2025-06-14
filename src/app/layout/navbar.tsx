@@ -4,6 +4,7 @@ import Link from "next/link";
 import { DevIcon } from "@/../public/icons/icons";
 import React from "react";
 import { usePathname } from "next/navigation";
+import ThemeSwitch from "../components/ThemeSwitch";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -52,7 +53,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <ul className="hidden pr-8 space-x-8 text-lg sm:flex navbar">
+          <ul className="items-center justify-center hidden pr-8 space-x-8 text-lg sm:flex navbar">
             <li>
               <Link href="/about">About</Link>
             </li>
@@ -68,6 +69,7 @@ export default function Navbar() {
             <li>
               <Link href="/contact">Contact</Link>
             </li>
+            <ThemeSwitch />
           </ul>
         </nav>
 

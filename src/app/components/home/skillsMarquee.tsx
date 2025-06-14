@@ -88,7 +88,7 @@ const Card = ({
         <div className="flex items-center justify-center w-12 h-12 transition-all duration-200 rounded-lg sm:w-16 sm:h-16 fill-base-content">
           {icon}
         </div>
-        <div className="absolute text-transparent opacity-0 sm:text-xl text-md w-[90%] transition-all duration-600 text-shadow-md/70 text-shadow-black">
+        <div className="absolute text-transparent opacity-0 sm:text-xl text-md w-[90%] transition-all duration-600 text-shadow-md/70 text-shadow-base-300">
           {name}
         </div>
         <div

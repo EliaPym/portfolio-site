@@ -104,7 +104,7 @@ interface TerminalProps {
 
 export const Terminal = ({ children, className }: TerminalProps) => {
   const scrollContainerRef = useRef<HTMLPreElement>(null);
-  const [childrenArray, setChildrenArray] = useState<React.ReactNode[]>([]);
+  const [, setChildrenArray] = useState<React.ReactNode[]>([]);
 
   // Detect changes to children to trigger scrolling
   useEffect(() => {

@@ -12,4 +12,48 @@ const DevIcon = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-export { DevIcon };
+const SunIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    width={800}
+    height={800}
+    viewBox="-2 -2 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+    preserveAspectRatio="xMinYMin"
+    className="jam jam-sun"
+    {...props}
+  >
+    <path d="M10 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6m0 2a5 5 0 1 1 0-10 5 5 0 0 1 0 10m0-15a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V1a1 1 0 0 1 1-1m0 16a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1M1 9h2a1 1 0 1 1 0 2H1a1 1 0 0 1 0-2m16 0h2a1 1 0 0 1 0 2h-2a1 1 0 0 1 0-2m.071-6.071a1 1 0 0 1 0 1.414l-1.414 1.414a1 1 0 1 1-1.414-1.414l1.414-1.414a1 1 0 0 1 1.414 0M5.757 14.243a1 1 0 0 1 0 1.414L4.343 17.07a1 1 0 1 1-1.414-1.414l1.414-1.414a1 1 0 0 1 1.414 0zM4.343 2.929l1.414 1.414a1 1 0 0 1-1.414 1.414L2.93 4.343A1 1 0 0 1 4.343 2.93zm11.314 11.314 1.414 1.414a1 1 0 0 1-1.414 1.414l-1.414-1.414a1 1 0 1 1 1.414-1.414" />
+  </svg>
+);
+
+const MoonIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    width="800px"
+    height="800px"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+  </svg>
+);
+
+const ContrastIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    id="Layer_1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    width="800px"
+    height="800px"
+    viewBox="0 0 100 100"
+    enableBackground="new 0 0 100 100"
+    xmlSpace="preserve"
+    {...props}
+  >
+    <g>
+      <path d="M50,12.5c-20.712,0-37.5,16.793-37.5,37.502C12.5,70.712,29.288,87.5,50,87.5c20.712,0,37.5-16.788,37.5-37.498 C87.5,29.293,70.712,12.5,50,12.5z M50.124,22.443C65.265,22.51,77.56,34.848,77.56,50.002c0,15.155-12.295,27.488-27.436,27.555 V22.443z" />
+    </g>
+  </svg>
+);
+
+export { DevIcon, SunIcon, MoonIcon, ContrastIcon };
